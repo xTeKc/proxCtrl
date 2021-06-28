@@ -17,4 +17,8 @@ contract Robot is Storage {
         return _uintStorage['Robots'];
     }
 
+    function setNumOfRobots(uint256 toSet) public {
+        _uintStorage['Robots'] = toSet;
+    }
+
 }
