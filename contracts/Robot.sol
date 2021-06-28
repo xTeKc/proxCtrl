@@ -13,4 +13,8 @@ contract Robot is Storage {
         owner = msg.sender;
     }
 
+    function getNumOfRobots() public view returns(uint256) {
+        return _uintStorage['Robots'];
+    }
+
 }
