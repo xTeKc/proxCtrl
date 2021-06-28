@@ -14,4 +14,9 @@ contract Proxy is Storage {
         currentAddress = newAddress;
     }    
 
+    //Fallback Function
+    function () payable external {
+        
+    }    
+
 }
