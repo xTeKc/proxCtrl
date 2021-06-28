@@ -11,7 +11,7 @@ contract Proxy is Storage {
     }    
 
     function upgrade(address _newAddress) public {
-        currentAddress = newAddress;
+        currentAddress = _newAddress;
     }    
 
     //Fallback Function
@@ -23,7 +23,7 @@ contract Proxy is Storage {
         assembly {
             let result := delegatecall(gas, implementation, add(data, 0x20), mload(data), 0, 0)
             let size := returndatasize
-            let ptr := mload(0x40);
+            let ptr := mload(0x40)
             returndatacopy(ptr, 0, size)
             switch result
             case 0 {revert(ptr, size)}
