@@ -16,7 +16,9 @@ contract Proxy is Storage {
 
     //Fallback Function
     function () payable external {
-        
+        address implementation = currentAddress;
+        require(currentAddress != address(0));
+        bytes memory data = msg.data;
     }    
 
 }
