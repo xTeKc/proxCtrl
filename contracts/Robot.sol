@@ -9,5 +9,8 @@ contract Robot is Storage {
         _;
     }
 
-    
+    constructor() {
+        owner = msg.sender;
+    }
+
 }
